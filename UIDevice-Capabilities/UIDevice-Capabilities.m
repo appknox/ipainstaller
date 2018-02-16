@@ -1,5 +1,5 @@
-#import <GraphicsServices/GraphicsServices.h>
 #import <dlfcn.h>
+#import "UIDevice-Capabilities.h"
 
 @implementation UIDevice (Capabilities)
 
