@@ -1,3 +1,5 @@
+
+export THEOS_DEVICE_IP = 192.168.122.228
 export TARGET_CODESIGN_FLAGS="-Ssign.plist"
 export ARCHS = armv7 arm64
 export TARGET=iphone:9.2:4.0
