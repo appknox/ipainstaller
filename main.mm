@@ -302,7 +302,9 @@ static BOOL uninstallApplication(NSString *appIdentifier) {
         if (LSApplicationWorkspace_class) {
             LSApplicationWorkspace *workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
             if (workspace && [workspace uninstallApplication:appIdentifier withOptions:nil])
-                return YES;
+            {
+                  return YES;
+            }
         }
 
     }
