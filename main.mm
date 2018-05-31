@@ -1286,6 +1286,12 @@ int main (int argc, char **argv, char **envp) {
 
             continue;
         }
+        
+        if (forceInstall) {
+            printf("Force installing %s...\n", appIdentifier.UTF8String);
+            installApp(ipa, appIdentifier);
+            continue;
+        }
 
         if (!appIdentifier || !appDisplayName || !appVersion) {
             if (quietInstall < 2)
