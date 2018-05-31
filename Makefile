@@ -25,4 +25,4 @@ include theos/makefiles/tool.mk
 VERSION.INC_BUILD_NUMBER = 1
 
 after-clean::
-	rm -r obj/ packages/ .theos/
+	rm -rf obj/ packages/ .theos/
