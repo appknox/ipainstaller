@@ -3,6 +3,7 @@
 #import <UIKit/UIKit.h>
 #import "ZipArchive/ZipArchive.h"
 #import "UIDevice-Capabilities/UIDevice-Capabilities.h"
+#import <rootless.h>
 
 #define EXECUTABLE_VERSION @"3.4.1"
 

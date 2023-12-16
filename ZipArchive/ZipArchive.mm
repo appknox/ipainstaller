@@ -10,6 +10,7 @@
 #import "ZipArchive.h"
 #import "zlib.h"
 #import "zconf.h"
+#import <rootless.h>
 
 @interface ZipArchive (Private)
 
@@ -75,8 +76,8 @@
 			// some application does use dosDate, but tmz_date instead
 		//	zipInfo.dosDate = [fileDate timeIntervalSinceDate:[self Date1980] ];
 			NSCalendar* currCalendar = [NSCalendar currentCalendar];
-			uint flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | 
-				NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ;
+			uint flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | 
+				NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond ;
 			NSDateComponents* dc = [currCalendar components:flags fromDate:fileDate];
 			zipInfo.tmz_date.tm_sec = [dc second];
 			zipInfo.tmz_date.tm_min = [dc minute];
@@ -266,7 +267,7 @@
 			dc.year = fileInfo.tmu_date.tm_year;
 			
 			NSCalendar *gregorian = [[NSCalendar alloc] 
-									 initWithCalendarIdentifier:NSGregorianCalendar];
+									 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 			
 			orgDate = [gregorian dateFromComponents:dc] ;
 			[dc release];
@@ -698,7 +699,7 @@
 			dc.year = fileInfo.tmu_date.tm_year;
 			
 			NSCalendar *gregorian = [[NSCalendar alloc]
-									 initWithCalendarIdentifier:NSGregorianCalendar];
+									 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 			
 			orgDate = [gregorian dateFromComponents:dc] ;
 			[dc release];
@@ -750,7 +751,7 @@
 	[comps setMonth:1];
 	[comps setYear:1980];
 	NSCalendar *gregorian = [[NSCalendar alloc]
-							 initWithCalendarIdentifier:NSGregorianCalendar];
+							 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDate *date = [gregorian dateFromComponents:comps];
 	
 	[comps release];
