@@ -1,5 +1,6 @@
 #import <dlfcn.h>
 #import "UIDevice-Capabilities.h"
+#import <rootless.h>
 
 @implementation UIDevice (Capabilities)
 
