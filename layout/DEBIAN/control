@@ -1,5 +1,5 @@
 Package: com.autopear.installipa
-Version: 4.0.0
+Version: 4.0.1
 Architecture: iphoneos-arm
 Pre-Depends: firmware (>= 4.0), gsc.armv7
 Section: Utilities

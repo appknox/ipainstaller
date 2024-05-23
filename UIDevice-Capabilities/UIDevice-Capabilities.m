@@ -15,7 +15,12 @@ static BOOL (*MGGetBoolAnswer)(NSString *capability);
     }
     
     if (MGGetBoolAnswer != NULL) {
-        return MGGetBoolAnswer(capability);
+        if ([capability isEqual:@"nfc"]){
+            NSLog(@"Returning True and Install the app anyway regardless of the NFC Capability");
+            return YES;
+        } else {
+            return MGGetBoolAnswer(capability);
+        }
     }
     
     return NO;
